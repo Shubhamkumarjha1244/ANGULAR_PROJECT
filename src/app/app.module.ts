@@ -14,13 +14,15 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { DishdetailComponent } from './dishdetail/dishdetail.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
+import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { ContactComponent } from './contact/contact.component';
     FooterComponent,
     AboutComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,8 @@ import { ContactComponent } from './contact/contact.component';
     MatCardModule,
     MatButtonModule,
     MatGridListModule,
+    MatDialogModule,
+
   ],
   providers: [
     DishService,
@@ -50,6 +55,9 @@ import { ContactComponent } from './contact/contact.component';
     PromotionsService
 
   ],
+  entryComponents: [
+    LoginComponent
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
