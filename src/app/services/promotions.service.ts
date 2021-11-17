@@ -13,12 +13,12 @@ export class PromotionsService {
 
 
 
-  getPromotions(): Promotion[] {
-    return PROMOTIONS;
+  getPromotions():Promise<Promotion[]> {
+    return Promise.resolve( PROMOTIONS);
   }
 
-  getFeaturedPromotion(): Promotion {
-    return PROMOTIONS.filter((promotion) => promotion.featured)[0];
+  getFeaturedPromotion(): Promise<Promotion> {
+    return Promise.resolve(PROMOTIONS.filter((promotion) => promotion.featured)[0]);
   }
   
 }
