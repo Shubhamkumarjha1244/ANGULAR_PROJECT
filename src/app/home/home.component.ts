@@ -14,9 +14,9 @@ import { LeaderService } from '../services/leader.service';
 
 export class HomeComponent implements OnInit {
 
-  dish: Dish = new Dish;
-  promotion: Promotion = new Promotion;
-  leader: leader=new leader;
+  dish: Dish;
+  promotion: Promotion;
+  leader:leader;
 
   constructor(private dishservice: DishService,
     private promotionservice: PromotionsService,private leaderservice: LeaderService) { }

@@ -10,7 +10,7 @@ import { DishService } from '../services/dish.service';
 })
 export class MenuComponent implements OnInit {
   
-  dishes: Dish[] = [];
+  dishes!: Dish[];
 
   selectedDish: Dish = new Dish;
 
@@ -20,6 +20,7 @@ export class MenuComponent implements OnInit {
 
     this.dishService.getDishes()
       .then(dishes => this.dishes = dishes);
+      
   }
 
   onSelect(dish: Dish) {

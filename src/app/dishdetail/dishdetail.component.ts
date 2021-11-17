@@ -15,7 +15,7 @@ import { Location } from '@angular/common';
 })
 export class DishdetailComponent implements OnInit {
 
-    dish: Dish = new Dish;
+    dish:Dish;
   
   
   constructor(private dishservice: DishService,

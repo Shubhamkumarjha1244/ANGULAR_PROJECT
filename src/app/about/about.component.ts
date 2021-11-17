@@ -8,7 +8,8 @@ import { LeaderService } from '../services/leader.service';
 })
 export class AboutComponent implements OnInit {
 
-  leaders: leader[] = [];
+  leaders!: leader[];
+ 
 
   constructor(
     private leaderService: LeaderService
