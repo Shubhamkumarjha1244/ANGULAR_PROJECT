@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { baseURL } from './shared/baseurl';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -23,7 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import {MatSliderModule} from '@angular/material/slider';
 
 
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
@@ -48,6 +50,7 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule ,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -63,6 +66,7 @@ import { LoginComponent } from './login/login.component';
     MatSelectModule,
     MatSlideToggleModule,
     MatProgressSpinnerModule,
+    MatSliderModule,
 
 
     FormsModule ,
@@ -72,7 +76,8 @@ import { LoginComponent } from './login/login.component';
   providers: [
     DishService,
     LeaderService,
-    PromotionsService
+    PromotionsService,
+    {provide: 'BaseURL', useValue: baseURL}
 
   ],
   entryComponents: [

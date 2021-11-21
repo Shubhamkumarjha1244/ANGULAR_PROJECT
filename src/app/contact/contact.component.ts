@@ -11,8 +11,8 @@ export class ContactComponent implements OnInit {
 
   
 
-  feedbackForm!: FormGroup;
-  feedback!: Feedback;
+  feedbackForm: FormGroup;
+  feedback: Feedback;
   contactType = ContactType;
   formErrors = {
     'firstname': '',
@@ -96,7 +96,7 @@ export class ContactComponent implements OnInit {
           const messages = this.validationMessages[field];
           for (const key in control.errors) {
             if (control.errors.hasOwnProperty(key)) {
-              this.formErrors[field] += messages[key] + ' ';
+              this.formErrors[field] += messages[key] + ' '; 
             }
           }
         }
