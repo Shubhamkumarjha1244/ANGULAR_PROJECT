@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LeaderService } from './services/leader.service';
 import { DishService } from './services/dish.service';
 import { PromotionsService } from './services/promotions.service';
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 import { AppComponent } from './app.component';
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
@@ -77,7 +78,8 @@ import { LoginComponent } from './login/login.component';
     DishService,
     LeaderService,
     PromotionsService,
-    {provide: 'BaseURL', useValue: baseURL}
+    {provide: 'BaseURL', useValue: baseURL},
+    ProcessHTTPMsgService,
 
   ],
   entryComponents: [
