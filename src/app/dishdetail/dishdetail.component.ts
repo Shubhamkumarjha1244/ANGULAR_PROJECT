@@ -19,6 +19,7 @@ export class DishdetailComponent implements OnInit {
     dish:Dish;
     baseURL=baseURL;
     errMess: string;
+    dishcopy: Dish;
 
   constructor(private dishservice: DishService,
     private route: ActivatedRoute,
@@ -65,7 +66,7 @@ export class DishdetailComponent implements OnInit {
 
     this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds,errmess => this.errMess = <any>errmess);
     this.route.params.pipe(switchMap((params: Params) => this.dishservice.getDish(params['id'])))
-    .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); },errmess => this.errMess = <any>errmess);
+    .subscribe(dish => { this.dish = dish;this.dishcopy = dish; this.setPrevNext(dish.id); },errmess => this.errMess = <any>errmess);
     
 
   }
@@ -125,6 +126,11 @@ export class DishdetailComponent implements OnInit {
    
     console.log(this.commentForm.value);
     this.dish.comments.push(this.commentForm.value);
+    this.dishservice.putDish(this.dishcopy)
+      .subscribe(dish => {
+        this.dish = dish; this.dishcopy = dish;
+      },
+      errmess => { this.dish = null; this.dishcopy = null; this.errMess = <any>errmess; });
     
     this.feedbackFormDirective.resetForm();
     this.commentForm.reset({
