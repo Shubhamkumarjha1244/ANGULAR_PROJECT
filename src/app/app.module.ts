@@ -10,6 +10,7 @@ import { LeaderService } from './services/leader.service';
 import { DishService } from './services/dish.service';
 import { PromotionsService } from './services/promotions.service';
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
+import { FeedbackService } from './services/feedback.service';
 import { AppComponent } from './app.component';
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
@@ -82,6 +83,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     PromotionsService,
     {provide: 'BaseURL', useValue: baseURL},
     ProcessHTTPMsgService,
+    FeedbackService,
 
   ],
   entryComponents: [

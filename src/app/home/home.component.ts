@@ -6,7 +6,7 @@ import { Dish } from '../shared/dish';
 import { leader } from '../shared/leader';
 import { LeaderService } from '../services/leader.service';
 import { baseURL } from '../shared/baseurl';
-import { expand, flyInOut } from '../animations/app.animation';
+import { expand, flyInOut } from '../animation/app.animation';
 
 @Component({
   selector: 'app-home',
@@ -38,9 +38,11 @@ export class HomeComponent implements OnInit {
     this.dishservice.getFeaturedDish().subscribe(dish => this.dish = dish
       ,errmess => this.errMess = <any>errmess);
     
-    this.promotionservice.getFeaturedPromotion().subscribe(promotion =>this.promotion=promotion);
+    this.promotionservice.getFeaturedPromotion().subscribe(promotion =>this.promotion=promotion
+      ,errmess => this.errMess = <any>errmess);
     
-    this.leaderservice.getFeaturedleader().subscribe(leader=>this.leader=leader);
+    this.leaderservice.getFeaturedleader().subscribe(leader=>this.leader=leader,
+      errmess => this.errMess = <any>errmess);
   }
 
 }

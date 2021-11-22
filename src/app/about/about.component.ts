@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { leader } from '../shared/leader';
 import { LeaderService } from '../services/leader.service';
-import { expand, flyInOut } from '../animations/app.animation';
-
+import { expand, flyInOut, visibility } from '../animation/app.animation';
+import { baseURL } from '../shared/baseurl';
 
 
 
@@ -15,14 +15,15 @@ import { expand, flyInOut } from '../animations/app.animation';
     'style': 'display: block;'
     },
     animations: [
-      flyInOut(),
-      expand()
+      
+      flyInOut(),visibility(),expand()
     ]
 })
 export class AboutComponent implements OnInit {
 
-  leaders!: leader[];
- 
+  leaders: leader[];
+  errMess: String;
+  baseURL=baseURL;
 
   constructor(
     private leaderService: LeaderService
@@ -30,7 +31,9 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
    
-    this.leaderService.getleaders().subscribe(leaders=>this.leaders=leaders);
+
+    this.leaderService.getleaders().subscribe(leaders => this.leaders = leaders
+      ,errmess => this.errMess = <any>errmess);
   }
 
 }

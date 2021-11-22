@@ -6,7 +6,7 @@ import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { switchMap } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { expand, flyInOut, visibility } from '../animations/app.animation';
+import { expand, flyInOut, visibility } from '../animation/app.animation';
 
 @Component({
   selector: 'app-dishdetail',

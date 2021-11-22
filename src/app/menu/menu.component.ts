@@ -2,7 +2,7 @@ import { Component, OnInit,Inject } from '@angular/core';
 import { Dish } from '../shared/dish';
 import { baseURL } from '../shared/baseurl';
 import { DishService } from '../services/dish.service';
-import { expand, flyInOut } from '../animations/app.animation';
+import { expand, flyInOut } from '../animation/app.animation';
 
 
 
